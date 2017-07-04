@@ -26,8 +26,13 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-
+mu = mean(X);
+sigma = std(X);
+sigma( sigma ==0) =1;
+m = size(X, 1);
+mu_matrix =  ones(m, 1) * mu;
+sigma_matrix = ones(m, 1) * sigma;
+X_norm = (X - mu_matrix)./sigma_matrix;
 
 
 
